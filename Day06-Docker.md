@@ -122,11 +122,11 @@ docker pull httpd:2.4
 ### **Run the HTTPD Container**
 Start an HTTPD container and expose it on port **80**:
 ```bash
-docker run -d -p 80:80 --name my_httpd httpd
+docker run -d -p 80:80 --name c1 httpd
 ```
 - `-d` → Runs the container in detached mode (background).  
 - `-p 80:80` → Maps port 80 of the instance to port 80 in the container.  
-- `--name my_httpd` → Assigns a custom name to the container.  
+- `--name c1` → Assigns a custom name to the container.  
 
 ---
 
@@ -135,11 +135,13 @@ To check if the container is running:
 ```bash
 docker ps
 ```
-You should see `my_httpd` in the list.
+![image](https://github.com/user-attachments/assets/58cb7966-bb8f-4cb7-a4a9-cff2ac38cb83)
+
+You should see `c1` in the list.
 
 To log in to the HTTPD container:
 ```bash
-docker exec -it my_httpd /bin/bash
+docker exec -it c1 /bin/bash
 ```
 
 ---
@@ -148,9 +150,11 @@ docker exec -it my_httpd /bin/bash
 1. Copy the **public IP** of your AWS Linux instance from the AWS console.
 2. Open a browser and enter:
 ```
-http://your-instance-ip
+http://65.0.109.163
 ```
 You should see the default Apache HTTPD test page.
+![image](https://github.com/user-attachments/assets/1a7cafec-753a-4f99-9a54-d61d5bd4472a)
+
 
 ---
 
